@@ -1,0 +1,26 @@
+<p>rxplay works!</p>
+<!--<div style="display: flex; flex-direction: row; gap: 40px">-->
+<!--  <div>-->
+<!--  <app-component-a></app-component-a>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <app-component-b></app-component-b>-->
+<!--  </div>-->
+<!--</div>-->
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Number</mat-label>
+    <input type="text"
+      placeholder="Pick one"
+      aria-label="Number"
+      matInput
+      [formControl]="myControl"
+      [matAutocomplete]="auto">
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      @for (option of filteredOptions | async; track option) {
+        <mat-option [value]="option['id']">{{option['title']}}</mat-option>
+      }
+    </mat-autocomplete>
+  </mat-form-field>
+  xxx
+</form>

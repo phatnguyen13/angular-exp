@@ -1,0 +1,28 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <label for="first-name">
+    First name:
+  </label>
+  <input id="first-name" formControlName="firstName">
+<!--  <app-custom-input formControlName="lastName"></app-custom-input>-->
+  <select id='gender' formControlName="gender">
+
+    <option value="female">
+      Female
+    </option>
+
+    <option value="make">
+      Male
+    </option>
+
+    <option value="other">
+      Other
+    </option>
+  </select>
+  <br>
+<!--  <app-button-group formControlName="xgender" ></app-button-group>-->
+<form-autocomplete [options]="fruitOptions" formControlName="fruits"></form-autocomplete>
+</form>
+
+
+
+<pre>{{xgender1 | json}}</pre>

@@ -1,0 +1,10 @@
+<p>change-detection-play works!</p>
+<div>Count: {{count()}}</div>
+<button matButton (click)="increase()">Increase</button>
+<app-child [data]="childData" [lastUpdate]="lastUpdate"></app-child>
+
+<button (click)="updateWithMark()">Update with markForCheck()</button>
+<button (click)="updateWithDetect()">Update with detectChanges()</button>
+<button (click)="updateFromWebSocket()">Simulate WebSocket data</button>
+<button (click)="updateFromTimer()">Update from setTimeout</button>
+

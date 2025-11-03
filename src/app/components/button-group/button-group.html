@@ -1,0 +1,5 @@
+
+<button [disabled]="disableOn" (click)="handleChangeGender('male')">Male</button>
+<button (click)="handleChangeGender('female')">Female</button>
+<button (click)="handleChangeGender('other')">Other</button>
+<pre>{{disableOn}}</pre>

@@ -1,0 +1,19 @@
+﻿  <mat-form-field class="example-full-width">
+    <mat-label>Number</mat-label>
+    <input type="text"
+      placeholder="Pick one"
+      aria-label="Number"
+      matInput
+      [(ngModel)]="internalValue"
+      [matAutocomplete]="auto"
+      (input)="onInput($event)"
+    >
+    <mat-autocomplete #auto="matAutocomplete">
+      @for (option of this.filteredOptions() ; track option) {
+        <mat-option [value]="option">{{option}}</mat-option>
+      }
+    </mat-autocomplete>
+  </mat-form-field>
+
+<pre>{{filteredOptions()| json}}</pre>
+<span>{{internalValue}}</span>

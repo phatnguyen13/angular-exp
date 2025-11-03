@@ -1,0 +1,22 @@
+<mat-toolbar>
+  <button matIconButton class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>My App</span>
+  <span class="example-spacer"></span>
+  <button matIconButton class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+
+
+  <a routerLink="/form" routerLinkActive="active">Form</a>
+  <a routerLink="/tab" routerLinkActive="active">Tab</a>
+  <a routerLink="/rxplay" routerLinkActive="active">Play</a>
+  <a matButton routerLink="/changeplay">Change</a>
+  <a matButton routerLink="/dependency-play">DI</a>
+  <a matButton routerLink="/community-play">Communicate</a>
+  <a matButton routerLink="/store-play">Store</a>
+  <button routerLink="/cart-play" matIconButton  class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon [matBadge]="cartSize()|| null">shopping_bag</mat-icon>
+  </button>
+</mat-toolbar>

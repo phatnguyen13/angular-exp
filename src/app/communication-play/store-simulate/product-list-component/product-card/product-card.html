@@ -1,0 +1,22 @@
+<mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>{{name()}}</mat-card-title>
+    <mat-card-subtitle>{{type()}}</mat-card-subtitle>
+  </mat-card-header>
+  <div style="position: relative; width: 100%; padding-bottom: 56.25%;">
+    <!-- 56.25% = 16:9 aspect ratio, adjust as needed -->
+    <img mat-card-image
+      [ngSrc]="img()"
+      alt="Photo of a Shiba Inu"
+      fill
+      style="object-fit: cover;">
+  </div>
+  <mat-card-content>
+    <p style="-webkit-line-clamp: 4; display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; ">
+      {{description()}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button matButton (click)="addToCart()">Add to card</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,13 @@
+<p>cart-component works!</p>
+<mat-list role="list">
+@for(item of cartItemsV2(); track item.product?.id){
+  <mat-list-item role="listitem">
+    {{item.product.name}} x {{item.num}}
+    <button mat-icon-button (click)="remove(item?.product.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+
+  </mat-list-item>
+}
+</mat-list>
+

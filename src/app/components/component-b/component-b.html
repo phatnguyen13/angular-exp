@@ -1,0 +1,6 @@
+<p>component-b works!</p>
+<button (click)="getPost()">Refresh</button>
+
+@for(item of post(); track item['id']){
+  {{item['title']}}
+}
