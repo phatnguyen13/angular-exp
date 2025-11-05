@@ -25,7 +25,6 @@ export class ButtonGroup implements ControlValueAccessor {
   }
 
   setDisabledState(isDisabled: boolean): void {
-    debugger;
     this.disableOn = isDisabled;
   }
 

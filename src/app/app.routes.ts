@@ -7,6 +7,8 @@ import {DependencyPlay} from './dependency-play/dependency-play';
 import {CommunicationPlay} from './communication-play/communication-play';
 import {StoreSimulate} from './communication-play/store-simulate/store-simulate';
 import {CartComponent} from './communication-play/store-simulate/cart-component/cart-component';
+import {News} from './performance-play/news/news';
+import {Weathers} from './performance-play/weathers/weathers';
 
 export const routes: Routes = [
   {
@@ -42,6 +44,14 @@ export const routes: Routes = [
   {
     path:'cart-play',
     component: CartComponent
+  },
+  {
+    path:'news-play',
+    component: News
+  },
+  {
+    path:'weather',
+    component: Weathers
   }
 
 ];

@@ -17,7 +17,7 @@ import {StoreService} from '../store.service';
 })
 export class ProductListComponent {
   listProduct = signal<any>([]);
-  blogService = inject(RxplayService)
+  blogService = inject(RxplayService);
   cartService = inject(StoreService);
   ngOnInit() {
     this.blogService.getPost().pipe(map(posts => posts.map((v: any)=> {
@@ -37,4 +37,7 @@ export class ProductListComponent {
   addToCart(card: any) {
     this.cartService.addToCart(card);
   }
+
+
+
 }

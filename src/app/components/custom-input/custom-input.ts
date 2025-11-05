@@ -17,20 +17,16 @@ export class CustomInput implements ControlValueAccessor {
     private onTouched = () => {};
 
     writeValue = (value: string) => {
-      debugger;
       this.value = value;
     };
     registerOnChange(fn: any) {
-      debugger;
       this.onChange = fn;
     }
     registerOnTouched(fn: any) {
-      debugger;
       this.onTouched = fn;
     }
 
     onInput($event: any) {
-      debugger;
       const v = $event;
       this.value = v;
       this.onChange(v);

@@ -11,7 +11,6 @@ export class StoreService {
 
   addToCart(product: any){
     let cur = this.cartItems.value;
-    debugger;
     const f = cur.findIndex(i => i.product.id === product.id);
     if(f>-1){
       cur[f].num++;

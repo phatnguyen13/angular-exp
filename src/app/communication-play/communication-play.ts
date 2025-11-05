@@ -18,6 +18,6 @@ export class CommunicationPlay {
   getChildData() {
     this.childData.set(this.child()?.getData()!);
     const data = this.child()?.getData();
-    debugger;
+
   }
 }

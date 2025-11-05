@@ -46,7 +46,6 @@ export class FormFieldComponent implements ControlValueAccessor {
   }
 
   writeValue(obj: any): void {
-    debugger;
     this.internalValue.set(obj);
     this.onChange(obj);
   }

@@ -7,9 +7,10 @@ import {inject, Injectable} from '@angular/core';
 })
 export class RxplayService {
   http = inject(HttpClient);
-  private posts$ = this.http.get<any>('/blogs/search?q=cha&page=1&page_size=3').pipe(
-    map(post => post['data'])
+  private posts$ = this.http.get<any>('/blogs/search?q=cha&page=1&page_size=5').pipe(
+    map(post => post['data']),
   )
+
   private searchSubject = new Subject<any>();
   search$ = this.searchSubject.pipe(
     switchMap(search => {
