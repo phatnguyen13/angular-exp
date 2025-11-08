@@ -1,4 +1,4 @@
-<p>station-picker works!</p>
+<main>
 <form class="station-picker">
   <mat-form-field class="example-full-width">
     <mat-label>Number</mat-label>
@@ -8,10 +8,11 @@
       matInput
       [formControl]="myControl"
       [matAutocomplete]="auto">
-    <mat-autocomplete #auto="matAutocomplete">
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onOptionSelected()" >
       @for (option of filteredOptions | async; track option) {
         <mat-option [value]="option?.id">{{option | json}}</mat-option>
       }
     </mat-autocomplete>
   </mat-form-field>
 </form>
+</main>

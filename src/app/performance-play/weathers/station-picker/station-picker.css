@@ -1,0 +1,7 @@
+main {
+  max-width: 300px;
+}
+:host{
+  display: block;
+  max-width: 300px;
+}

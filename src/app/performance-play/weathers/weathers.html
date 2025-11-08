@@ -1,3 +1,27 @@
 <p>weathers works!</p>
-<app-range-picker (onChangeRange)="updateData"></app-range-picker>
-<app-station-picker></app-station-picker>
+<main>
+  <div id="option">
+    <app-range-picker (onChangeRange)="updateData"></app-range-picker>
+    <app-station-picker></app-station-picker>
+    <div>Sum day: {{weatherData().length}}</div>
+    <button (click)="switchVirtual()">Switch</button>
+  </div>
+  <div>
+    @if(showNormal()){
+      <p>Normal</p>
+      <div class="viewport">
+        @for(item of weatherData(); track item){
+          <app-weather-info (onHiddenOutput)="hiddenOutput($event)" [data]="item"></app-weather-info>
+        }
+      </div>
+    }
+    @else {
+      <p>Virtual</p>
+      <cdk-virtual-scroll-viewport  itemSize="166" class="viewport">
+        <div *cdkVirtualFor="let item of weatherData();" >
+          <app-weather-info (onHiddenOutput)="hiddenOutput($event)" [data]="item"></app-weather-info>
+        </div>
+      </cdk-virtual-scroll-viewport>
+    }
+  </div>
+</main>

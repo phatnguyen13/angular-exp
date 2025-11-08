@@ -1,6 +1,6 @@
 import {Component, inject, output} from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, ValueChangeEvent} from '@angular/forms';
-import {filter, Subject} from 'rxjs';
+import {filter, map} from 'rxjs';
 import {
   MatDatepickerModule,
   MatDatepickerToggle,
@@ -34,9 +34,9 @@ export class RangePicker {
     console.log(this.range);
     this.range.events.pipe(
       filter(event => event instanceof ValueChangeEvent),
+      filter(value => value?.value?.start && value?.value?.end)
     ).subscribe((res)=> {
-      console.log(res);
-      this.weatherService.rangeSubject.next(res);
+      this.weatherService.rangeSubject.next([res?.value?.start, res?.value?.end]);
     })
   }
 }

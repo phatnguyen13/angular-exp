@@ -48,14 +48,6 @@ export class StationPicker {
       distinctUntilChanged(),
       switchMap(value => this._filter(value||'')),
     );
-
-    this.myControl.events.pipe(
-      filter(event => event instanceof ValueChangeEvent))
-      .subscribe(res =>
-    {
-      console.log(res.value);
-      this.onDataPicker.emit(res);
-    })
   }
 
   private _filter(value: string) {
@@ -70,4 +62,9 @@ export class StationPicker {
       return of([])
   }
 
+  onOptionSelected() {
+    const v = this.myControl.value;
+    this.weatherService.stationSubject.next(v);
+
+  }
 }
